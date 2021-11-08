@@ -1,0 +1,27 @@
+\select@language {english}
+\contentsline {chapter}{Executive summary}{1}
+\contentsline {chapter}{\numberline {1}Introduction}{3}
+\contentsline {chapter}{\numberline {2}Data}{5}
+\contentsline {section}{\numberline {2.1}Meteosat SEVIRI data}{5}
+\contentsline {section}{\numberline {2.2}Weather radar data}{6}
+\contentsline {section}{\numberline {2.3}Case days}{8}
+\contentsline {subsection}{\numberline {2.3.1}23\textsuperscript {rd} May 2012}{9}
+\contentsline {subsection}{\numberline {2.3.2}18\textsuperscript {th} June 2013}{9}
+\contentsline {subsection}{\numberline {2.3.3}20\textsuperscript {th} June 2013}{10}
+\contentsline {chapter}{\numberline {3}Methods}{12}
+\contentsline {section}{\numberline {3.1}Validation region and parallax correction}{12}
+\contentsline {section}{\numberline {3.2}Definition of Ground Truth}{13}
+\contentsline {section}{\numberline {3.3}Derivation of motion fields}{14}
+\contentsline {section}{\numberline {3.4}Cloud objects}{16}
+\contentsline {section}{\numberline {3.5}Validation approach}{17}
+\contentsline {chapter}{\numberline {4}Pixel-based Analysis}{21}
+\contentsline {section}{\numberline {4.1}Diurnal cycles}{21}
+\contentsline {section}{\numberline {4.2}Connection between CI detections and already existing precipitation}{25}
+\contentsline {section}{\numberline {4.3}Temporal persistence of CI detections}{27}
+\contentsline {section}{\numberline {4.4}Dominant cloud type of CI detections}{28}
+\contentsline {chapter}{\numberline {5}Object-based Analysis}{32}
+\contentsline {section}{\numberline {5.1}HRV cloud objects}{32}
+\contentsline {section}{\numberline {5.2}Ground truth objects}{32}
+\contentsline {section}{\numberline {5.3}Validation results}{35}
+\contentsline {chapter}{\numberline {6}Conclusion and Recommendations}{39}
+\contentsline {chapter}{References}{41}

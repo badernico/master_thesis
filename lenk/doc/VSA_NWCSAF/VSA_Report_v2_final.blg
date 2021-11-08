@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: VSA_Report_v2_final.aux
+The style file: ametsoc2014.bst
+Database file #1: bib/vsa_report_bib.bib
+Warning--I'm ignoring SiewertKoenigMecikalski2010's extra "doi" field
+--line 63 of file bib/vsa_report_bib.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+You've used 21 entries,
+            3493 wiz_defined-function locations,
+            848 strings with 10578 characters,
+and the built_in function-call counts, 20945 in all, are:
+= -- 2377
+> -- 743
+< -- 11
++ -- 414
+- -- 187
+* -- 1112
+:= -- 2237
+add.period$ -- 42
+call.type$ -- 21
+change.case$ -- 171
+chr.to.int$ -- 19
+cite$ -- 21
+duplicate$ -- 2099
+empty$ -- 1152
+format.name$ -- 240
+if$ -- 4275
+int.to.chr$ -- 3
+int.to.str$ -- 1
+missing$ -- 236
+newline$ -- 74
+num.names$ -- 88
+pop$ -- 949
+preamble$ -- 1
+purify$ -- 145
+quote$ -- 0
+skip$ -- 1208
+stack$ -- 0
+substring$ -- 917
+swap$ -- 1652
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 189
+warning$ -- 0
+while$ -- 106
+width$ -- 0
+write$ -- 254
+(There was 1 warning)

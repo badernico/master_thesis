@@ -1,0 +1,129 @@
+% Dokumenteneinstellungen
+\documentclass[a4paper,abstracton,DIV=classic,11pt]{scrreprt}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% Schriftart und Darstellung
+\usepackage{xcolor}
+\definecolor{eumetsatblau}{HTML}{00205b}
+
+\usepackage{flafter}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{graphicx}
+\addtokomafont{disposition}{\rmfamily\color{eumetsatblau}} % Überschriften auch mit Serifen
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[artemisia]{textgreek}
+
+% Seitenkopf- und Fußzeilen
+\usepackage{lastpage}
+
+% scrlayer-scrpage Paket für Kopf- und Fußzeilen
+\usepackage[headsepline]{scrlayer-scrpage}
+\addtokomafont{headsepline}{\color{eumetsatblau}}
+\addtokomafont{footsepline}{\color{eumetsatblau}}
+
+% Kopf- und Fußzeilenstile definieren
+\pagestyle{scrheadings}
+\ihead{\rightmark} \chead[]{} \ohead[\pagemark]{\pagemark} 
+\cfoot[]{}
+\renewcommand{\headfont}{\rmfamily \color{eumetsatblau}}
+\automark{chapter} 
+
+% Paket für Einheiten
+\usepackage{siunitx}
+\DeclareSIUnit\dbZ{dBZ}
+\sisetup{
+    detect-mode=false,
+    mode=text,
+}
+
+% Titelseitenangaben
+\title{Associate Scientist Activity for the validation of the Convection Initiation (CI) product of NWC\,SAF v2018}
+\author{Stephan Lenk, Fabian Senf, Hartwig Deneke}
+\subtitle{Associate Scientist Activity conducted at Nowcasting Departement of M\'{e}t\'{e}o-France, Toulouse, France}
+\subject{Final Report on the}
+\date{Period May-August 2018} 
+
+% Zitierstil
+\usepackage{natbib}
+\bibliographystyle{ametsoc2014}  
+
+% Literature statt Biliography
+\addto\captions{\renewcommand{\refname}{Literature}}
+\renewcommand{\bibname}{Literature}
+
+% Abbildungen fortlaufend nummerieren
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter} 
+\counterwithout{equation}{chapter}
+\counterwithout{footnote}{chapter}
+
+% Pakete für Abbildungen mit mehreren Grafiken
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Matheumgebungspakete
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\newcommand{\marked}[1]{\textbf{#1}}
+
+% Anteil, den Floats haben müssen, damit sie auf eine neue Seite dürfen
+\renewcommand{\floatpagefraction}{.7}
+
+% Paket für Änderungsverfolgung
+\usepackage[inline]{trackchanges}
+\addeditor{SL}
+\addeditor{FS}
+\addeditor{JMM}
+\addeditor{HD}
+
+\addto{\captionsenglish}{%
+  \renewcommand{\bibname}{References}
+}
+
+% Dokument %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Titelseite mit Logos aufbauen
+\makeatletter
+    \begin{titlepage}
+        \begin{center}
+        	\includegraphics[width=0.6\linewidth]{Grafiken/Logos/eumetsat_logo.pdf} \\
+        	\includegraphics[width=0.6\linewidth]{Grafiken/Logos/nwcsaf_logo.pdf} \\[1ex]
+            \includegraphics[width=0.25\linewidth]{Grafiken/Logos/LogoMeteoFrance.pdf}\\[2ex]
+            \includegraphics[width=0.4\linewidth]{Grafiken/Logos/Schriftzug_en.pdf}\\[4ex]
+            {\Large \bfseries \@author} \\[3ex]
+            {\large \@subject} \\[3ex]
+            {\huge \bfseries  \@title }\\[3ex] 
+            {\large  \@subtitle}\\[1ex] 
+            {\large \@date} \\ [2ex]
+            {\large NWC\,SAF/MF-PI responsible of Activity : J.-M. Moisselin} \\ [2ex]
+            {\large NWC\,SAF code of the document: NWC/CDOP3/SAF/MF-PI/SCI/RP/Ci\_Improv\_Tropos} \\ [1ex]
+        \end{center}
+    \end{titlepage}
+\makeatother
+
+% neue Seite und Seitennummerierung zurücksetzen
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\input{kapitel/abstract.tex}
+\tableofcontents
+\input{kapitel/introduction_final.tex}
+\input{kapitel/data_final.tex}
+\input{kapitel/methods_final.tex}
+\input{kapitel/field_analysis_final.tex}
+\input{kapitel/object_analysis_final.tex}
+\input{kapitel/conclusion_final.tex}
+
+\addcontentsline{toc}{chapter}{References}
+\bibliography{bib/vsa_report_bib}
+\end{document}

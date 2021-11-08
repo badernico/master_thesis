@@ -1,0 +1,19 @@
+% Encoding: UTF-8
+
+@TechReport{Karagiannidis2016,
+  author      = {Karagiannidis, Athanasios},
+  title       = {Visiting Scientist Activity for the validation and improvement of the Convective Initiation (CI) product of NWC SAF v2016 and v2018},
+  institution = {NWC SAF, M\'{e}t\'{e}o France, Toulouse},
+  year        = {2016},
+}
+
+@TechReport{RADOLANkurz2018,
+  author      = {Sacher,Daniel and Weigl, Elmar and Winterrath, Tanja},
+  title       = {Hoch aufgelöste Niederschlagsanalyse und –vorhersage auf der Basis quantitativer Radar- und Ombrometerdaten für grenzüberschreitende Fluss-Einzugsgebiete von Deutsch­land im Echtzeitbetrieb},
+  subtitle    = {Beschreibung des Kompositformats},
+  version     = {2.4.3},
+  institution = {Deutscher Wetterdienst},
+  year        = {2004--2018},
+}}
+
+@Comment{jabref-meta: databaseType:bibtex;}

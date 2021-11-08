@@ -1,0 +1,6 @@
+.title.h1 {
+    font-size: 14pt;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    text-shadow: 3px 2px red;
+}

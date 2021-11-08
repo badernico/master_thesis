@@ -1,0 +1,151 @@
+\begin{thebibliography}{21}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\renewcommand{\UrlFont}{\rmfamily}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{Auton\`{e}s and Moisselin(2016{\natexlab{a}})Auton\`{e}s, and
+  Moisselin}]{Autones2016b}
+Auton\`{e}s, F., and J.-M. Moisselin, 2016{\natexlab{a}}: {Algorithm
+  Theoretical Basis Document for Convection Products}. Tech. rep.,
+  M\'{e}t\'{e}o France.
+
+\bibitem[{Auton\`{e}s and Moisselin(2016{\natexlab{b}})Auton\`{e}s, and
+  Moisselin}]{Autones2016a}
+Auton\`{e}s, F., and J.-M. Moisselin, 2016{\natexlab{b}}: {User Manual for the
+  Convection Product}. Tech. rep., M\'{e}t\'{e}o France.
+
+\bibitem[{Bradski(2000)}]{opencV_library}
+Bradski, G., 2000: {The OpenCV Library}. \textit{Dr. Dobb's Journal of Software
+  Tools}.
+
+\bibitem[{Butler et~al.(2012)Butler, Wulff, Stanley,, and
+  Black}]{Butler:ECCV:2012}
+Butler, D.~J., J.~Wulff, G.~B. Stanley, and M.~J. Black, 2012: {A naturalistic
+  open source movie for optical flow evaluation}. \textit{European Conf. on
+  Computer Vision (ECCV)}, {A. Fitzgibbon et al. (Eds.)}, Ed., Springer-Verlag,
+  611--625, Part IV, LNCS 7577.
+
+\bibitem[{Derrien and {Le Gl\'{e}au}(2014)Derrien, and {Le
+  Gl\'{e}au}}]{NWCSAFWolken2014}
+Derrien, M., and H.~{Le Gl\'{e}au}, 2014: {Product User Manual for "Cloud
+  Products" (CMa-PGE01 v3.2, CT- PGE02 v2.2 \& CTTH-PGE03 v2.2)}. Tech. rep.,
+  {NWC\,SAF, M\'{e}t\'{e}o France}.
+
+\bibitem[{Haberlie et~al.(2015)Haberlie, Ashley,, and Pingel}]{Haberlie_2015}
+Haberlie, A.~M., W.~S. Ashley, and T.~J. Pingel, 2015: {The effect of
+  urbanisation on the climatology of thunderstorm initiation}.
+  \textit{Quarterly Journal of the Royal Meteorological Society},
+  \textbf{141~(688)}, 663--675, \doi{10.1002/qj.2499}.
+
+\bibitem[{Heike(1926)}]{Heidke1926}
+Heike, P., 1926: {Berechnung des Erfolges und der G\"{u}te der
+  Windst\"{a}rkevorhersagen im Sturmwarnungsdienst [Calculation of the success
+  and the quality of wind strength predictions in storm warning operations]}.
+  \textit{Geografiska Annaler}, \textbf{8}, 301--349, \doi{10.2307/519729}.
+
+\bibitem[{Karagiannidis(2016)}]{Karagiannidis2016}
+Karagiannidis, A., 2016: {Visiting Scientist Activity for the validation and
+  improvement of the Convective Initiation (CI) product of NWC SAF v2016 and
+  v2018}. Tech. rep., NWC\,SAF, M\'{e}t\'{e}o France, Toulouse.
+
+\bibitem[{Mecikalski and Bedka(2006)Mecikalski, and
+  Bedka}]{MecikalskiBedka2006}
+Mecikalski, J.~R., and K.~M. Bedka, 2006: {Forecasting Convective Initiation by
+  Monitoring the Evolution of Moving Cumulus in Daytime {GOES} Imagery}.
+  \textit{Mon. Wea. Rev.}, \textbf{134~(1)}, 49--78, \doi{10.1175/mwr3062.1}.
+
+\bibitem[{Mecikalski et~al.(2008)Mecikalski, Bedka, Paech,, and
+  Litten}]{MecikalskiBedkaPaechEtAl2008}
+Mecikalski, J.~R., K.~M. Bedka, S.~J. Paech, and L.~A. Litten, 2008: {A
+  Statistical Evaluation of {GOES} Cloud-Top Properties for Nowcasting
+  Convective Initiation}. \textit{Mon. Wea. Rev.}, \textbf{136~(12)},
+  4899--4914, \doi{10.1175/2008mwr2352.1}.
+
+\bibitem[{Mecikalski et~al.(2010{\natexlab{a}})Mecikalski, MacKenzie, Koenig,,
+  and Muller}]{MecikalskiMacKenzieKoenigEtAl2010}
+Mecikalski, J.~R., W.~M. MacKenzie, M.~Koenig, and S.~Muller,
+  2010{\natexlab{a}}: {Cloud-Top Properties of Growing Cumulus prior to
+  Convective Initiation as Measured by Meteosat Second Generation. Part I:
+  Infrared Fields}. \textit{J. Appl. Meteor. Climatol.}, \textbf{49~(3)},
+  521--534, \doi{10.1175/2009jamc2344.1}.
+
+\bibitem[{Mecikalski et~al.(2010{\natexlab{b}})Mecikalski, MacKenzie, König,,
+  and Muller}]{MecikalskiMacKenzieKoenigEtAl2010a}
+Mecikalski, J.~R., W.~M. MacKenzie, M.~König, and S.~Muller,
+  2010{\natexlab{b}}: {Cloud-Top Properties of Growing Cumulus prior to
+  Convective Initiation as Measured by Meteosat Second Generation. Part {II}:
+  Use of Visible Reflectance}. \textit{J. Appl. Meteor. Climatol.},
+  \textbf{49~(12)}, 2544--2558, \doi{10.1175/2010jamc2480.1}.
+
+\bibitem[{Merk and Zinner(2013)Merk, and Zinner}]{MerkZinner2013}
+Merk, D., and T.~Zinner, 2013: {Detection of convective initiation using
+  Meteosat {SEVIRI}: implementation in and verification with the tracking and
+  nowcasting algorithm Cb-{TRAM}}. \textit{Atmos. Meas. Tech.}, \textbf{6~(8)},
+  1903--1918, \doi{10.5194/amt-6-1903-2013}.
+
+\bibitem[{Moisselin and Auton\`{e}s(2017)Moisselin, and
+  Auton\`{e}s}]{Mousselin2017}
+Moisselin, J.-M., and F.~Auton\`{e}s, 2017: {Rapidly Developing Thunderstorm
+  (RDT) and Convection Initiation (CI)}. Presentation at the DWD CM\,SAF
+  seminar.
+
+\bibitem[{Schmetz et~al.(2002)Schmetz, Pili, Tjemkes, Just, Kerkmann, Rota,,
+  and Ratier}]{Schmetz2002}
+Schmetz, J., P.~Pili, S.~Tjemkes, D.~Just, J.~Kerkmann, S.~Rota, and A.~Ratier,
+  2002: {An Introduction to Meteosat Second Generation ({MSG})}.
+  \textit{Bulletin of the American Meteorological Society}, \textbf{83~(7)},
+  977--992, \doi{10.1175/1520-0477(2002)083<0977:aitmsg>2.3.co;2}.
+
+\bibitem[{Senf and Deneke(2017)Senf, and Deneke}]{Senf.Deneke_2017_JAMC}
+Senf, F., and H.~Deneke, 2017: {Satellite-based characterization of convective
+  growth and glaciation properties in relation to precipitation formation over
+  Central Europe}. \textit{J. Appl. Meteor. Climatol.}, \textbf{56},
+  1827--1845.
+
+\bibitem[{Sieglaff et~al.(2011)Sieglaff, Cronce, Feltz, Bedka, Pavolonis,, and
+  Heidinger}]{SieglaffCronceFeltzEtAl2011}
+Sieglaff, J.~M., L.~M. Cronce, W.~F. Feltz, K.~M. Bedka, M.~J. Pavolonis, and
+  A.~K. Heidinger, 2011: Nowcasting convective storm initiation using
+  satellite-based box-averaged cloud-top cooling and cloud-type trends.
+  \textit{J. Appl. Meteor. Climatol.}, \textbf{50~(1)}, 110--126,
+  \doi{10.1175/2010jamc2496.1}.
+
+\bibitem[{Siewert et~al.(2010)Siewert, Koenig,, and
+  Mecikalski}]{SiewertKoenigMecikalski2010}
+Siewert, C.~W., M.~Koenig, and J.~R. Mecikalski, 2010: {Application of Meteosat
+  second generation data towards improving the nowcasting of convective
+  initiation}. \textit{Meteorological Applications}, 422--451,
+  \doi{10.1002/met.176}.
+
+\bibitem[{Weigl et~al.(2004--2018)Weigl, Winterrath,, and
+  Sacher}]{RADOLANkurz2018}
+Weigl, E., T.~Winterrath, and D.~Sacher, 2004--2018: {Hoch aufgelöste
+  Niederschlagsana\-lyse und –vorhersage auf der Basis quantitativer Radar-
+  und Ombrometerdaten für grenzüberschreitende Fluss-Einzugsgebiete von
+  Deutsch­land im Echtzeitbetrieb [High resolution precipitation analysis and
+  forecast on the basis of quantitative radar and ombrometre data for
+  transborder river catchments of Germany in real-time operation]}. Tech. rep.,
+  Deutscher Wetterdienst.
+
+\bibitem[{Zach et~al.(2007)Zach, Pock,, and Bischof}]{Zach2007}
+Zach, C., T.~Pock, and H.~Bischof, 2007: {A Duality Based Approach for Realtime
+  TV-L Optical Flow}. \textit{Pattern Recognition: 29th DAGM Symposium,
+  Heidelberg, Germany, September 12-14, 2007, Proceedings}, F.~A. Hamprecht,
+  C.~Schn\"{o}rr, and B.~J\"{a}hne, Eds., Pattern Recognition: 29th DAGM
+  Symposium, Heidelberg, Germany, September 12-14, 2007, Proceedings, Vol.~29,
+  560, \doi{10.5201/ipol.2013.26}.
+
+\bibitem[{Zinner et~al.(2008)Zinner, Mannstein,, and
+  Tafferner}]{ZinnerMannsteinTafferner2008}
+Zinner, T., H.~Mannstein, and A.~Tafferner, 2008: {Cb-{TRAM}: Tracking and
+  monitoring severe convection from onset over rapid development to mature
+  phase using multi-channel Meteosat-8 {SEVIRI} data}. \textit{Meteorol Atmos
+  Phys}, \textbf{101~(3-4)}, 191--210, \doi{10.1007/s00703-008-0290-y}.
+
+\end{thebibliography}

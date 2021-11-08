@@ -1,0 +1,5 @@
+SSH-Zugang zur Satellitenempfangsanlage
+=======================================
+
+* Rechner eumcst1 (der linke) : ssh sat_data@eumcst1.tropos.de, Passwort: satempfaenger
+* Rechner eumcst2 (der rechte): ssh sat@eumcst2.tropos.de, Passwort: satempfaenger

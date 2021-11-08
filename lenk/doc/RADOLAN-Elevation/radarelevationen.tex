@@ -1,0 +1,40 @@
+\documentclass[parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{commath}
+
+\usepackage{makecell}
+
+%\usepackage{lmodern}
+\usepackage[bitstream-charter]{mathdesign}
+\usepackage{microtype}
+\usepackage{scrpage2}
+\usepackage{graphicx}
+\usepackage{siunitx}
+
+\begin{document}
+\section{Ziel-Azimut-Elevationsbeziehung}
+
+\subsection{Radarstandort BOO}
+\[ \epsilon(\alpha) = \SI{0.8}{\degree} \]
+
+\subsection{Radarstandort DRS}
+
+\[
+     \epsilon(\alpha)=\left\{\begin{array}{ll} \SI{0.8}{\degree}, & \alpha < \SI{35.0}{\degree} \\
+         			                           \SI{1.2}{\degree}, & \SI{35.0}{\degree} \leq \alpha < \SI{154.8}{\degree} \\
+         			                           \SI{1.5}{\degree}, & \SI{154.8}{\degree} \leq \alpha < \SI{194.7}{\degree} \\
+         			                           \SI{1.2}{\degree}, & \SI{194.7}{\degree} \leq \alpha < \SI{225.0}{\degree} \\
+         			                           \SI{0.9}{\degree}, & \SI{225.0}{\degree} \leq \alpha < \SI{254.6}{\degree} \\
+         			                           \SI{0.8}{\degree}, & \alpha \geq \SI{254.6}{\degree} \\
+         			          \end{array}
+         			  \right. .
+  \]
+
+
+\end{document}
