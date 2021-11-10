@@ -1,0 +1,1 @@
+The data of the meteosat seviri are stored on a hard drive due to the file size.
