@@ -6,7 +6,7 @@ library(maps)
 library(maptools)
 library(lubridate)
 
-fname <- '/Volumes/Elements/data/msevi_rss/olr/2021/07/OLR_20210715.nc'
+fname <- '/Volumes/Elements/data/msevi_rss/olr/2021/07/OLR_20210728.nc'
 nc_open(fname)
 
 Sys.setenv(TZ='UTC')
@@ -21,6 +21,7 @@ for (i in c(1:length(time))) {
   time_POS <- as.POSIXct(timestep, origin = '1970-01-01')
   
   OLR_ts <- OLR[,,i]
+  OLR_ts <- OLR_ts[,c(ncol(OLR_ts):1)]
   OLR_ts <- t(OLR_ts)
   
   r_OLR <- raster(OLR_ts)
@@ -31,19 +32,13 @@ for (i in c(1:length(time))) {
   countries <- map2SpatialLines(countries, proj4string = CRS("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"))
   
   png(paste0('Desktop/pics/',time_POS,'.png'), width = 1500, height = 1200, res = 250)
-  print(levelplot(r_OLR, margin = FALSE, at=seq(from=85,to=205,length=30), main = paste0(time_POS, ' UTC'), colorkey = list(title = 'W m-2'))+layer(sp.lines(countries)))
+  print(levelplot(r_OLR, margin = FALSE, at=seq(from=85,to=205,length=30), main = paste0(time_POS, ' UTC'), colorkey = list(title = 'W m-2'))+layer(sp.lines(countries)))#+layer(sp.points(points)))
   dev.off()
 }
 
-timestep <- time[1]
-time_POS <- as.POSIXct(timestep, origin = '1970-01-01')
 
 library(gifski)
 png_files <- list.files(paste0("Desktop/pics/"), pattern = ".png", full.names = TRUE)
 gifski(png_files, gif_file = paste0("/Volumes/Elements/gifs/",'OLR_',year(time_POS),'_',month(time_POS),'_',day(time_POS),'.gif'), width = 1500, height = 1200, delay = 0.5)
-
-
-
-
 
 

@@ -60,7 +60,10 @@ for i in range(len(fnames)):
 
     # calculating outgoing longwave radiation (OLR) (Singh et al., 2007)
     olr = 12.94*ir_rad+16.5*wv_rad+((10.09*wv_rad)/ir_rad)+((12.94*wv_rad)/(ir_rad+0.39))+77.47
-
+    
+    # change column order
+    olr = olr[np.arange(olr.shape[0]-1,0-1,-1),:]
+    
     # put array into a big OLR dataset
     if i==0:
         OLR = np.ma.asanyarray([olr]*len(fnames))
