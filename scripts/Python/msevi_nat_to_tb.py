@@ -21,6 +21,7 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
 
+
 print('Script - START')
 
 # loop over all sensing dates ('data/sensing_dates.txt')
@@ -57,16 +58,14 @@ for dd in np.arange(0,len(sed),1):
         scn = Scene(reader='seviri_l1b_native', filenames=fname)
 
         # load channels, calibrations and composites
-        scn.load(['HRV',0.6,0.8,1.6,3.9,8.7,9.7,12.0,13.4,7.3,10.8,6.2], calibration='counts')
-        scn.load(['convection'])
-        scn.load(['natural_color'])
+        scn.load([3.9,8.7,9.7,12.0,13.4,7.3,10.8,6.2], calibration='brightness_temperature')
 
         # resample
         scn = scn.resample("my_germ2")
 
         # netCDF file
         scn.save_datasets(filename = ftext+'.nc', 
-                          base_dir = '/Volumes/Elements/data/msevi_rss/raw_netcdf/'+y_oi+'/'+m_oi+'/'+d_oi+'/', 
+                          base_dir = '/Volumes/Elements/data/msevi_rss/raw_tb/'+y_oi+'/'+m_oi+'/'+d_oi+'/', 
                           writer = 'cf', engine = 'netcdf4')
         print(doi)
         print(str(round((i+1)/len(fnames)*100,0))+' %')
