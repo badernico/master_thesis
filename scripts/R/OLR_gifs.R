@@ -7,7 +7,9 @@ library(maptools)
 library(lubridate)
 library(gifski)
 
-fname <- '/Volumes/Elements/data/msevi_rss/tobac_tb/2021/07/OLR_20210717.nc'
+
+
+fname <- '/Volumes/Elements/data/msevi_rss/tobac_tb/2021/06/OLR_20210622.nc'
 nc_open(fname)
 
 Sys.setenv(TZ='UTC')
@@ -32,17 +34,19 @@ for (i in c(1:length(time))) {
   countries <- map("world", plot=FALSE) 
   countries <- map2SpatialLines(countries, proj4string = CRS("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"))
   
-  mycol <- colorRampPalette(c('#000099', '#0080FF','#00FFFF','#B2FF66','#FFFF33','#FF9933','#FF3333','#990000'))(351)
+  mycol <- colorRampPalette(c('#000099', '#0080FF','#00FFFF','#B2FF66','#FFFF33','#FF9933','#FF3333','#990000'))(301)
   mycol2 <- colorRampPalette(c('white','black'))(700)
   
-  png(paste0('Desktop/pics/',time_POS,'.png'), width = 1500, height = 1200, res = 250)
+  png(paste0('~/Desktop/pics/',time_POS,'.png'), width = 1800, height = 2400, res = 400)
   #print(levelplot(r_OLR, margin = FALSE, at=seq(from=195,to=305,length=60), main = paste0(time_POS, ' UTC'), colorkey = list(title = 'K'))+latticeExtra::layer(sp.lines(countries)))#+layer(sp.points(points)))
-  print(levelplot(r_OLR, margin = FALSE, at = c(seq(205,240,0.1),seq(240.1,310,0.1)), main = list(paste0(time_POS, ' UTC'), hjust = +0.35), col.regions = c(rev(mycol),mycol2), colorkey = list(title = 'K', space = 'bottom', width = 0.95), xlab = list(label = "Longitude", vjust = -.2), ylab = list(label = "Latitude", vjust = +.2))
+  print(levelplot(r_OLR, margin = FALSE, at = c(seq(210,240,0.1),seq(240.1,310,0.1)), main = list(paste0(time_POS, ' UTC'), hjust = +0.35), col.regions = c(rev(mycol),mycol2), colorkey = list(title = 'K', space = 'bottom', width = 0.95), xlab = list(label = "Longitude", vjust = -.2), ylab = list(label = "Latitude", vjust = +1))
         +latticeExtra::layer(sp.lines(countries)))
   dev.off()
+  print(paste0(round((i/length(time))*100,2),' %'))
 }
-min(OLR)
 
-png_files <- list.files(paste0("Desktop/pics/"), pattern = ".png", full.names = TRUE)
-gifski(png_files, gif_file = paste0("/Volumes/Elements/gifs/",'OLR_',year(time_POS),'_',month(time_POS),'_',day(time_POS),'.gif'), width = 1500, height = 1200, delay = 0.5)
+
+png_files <- list.files(paste0("~/Desktop/pics/"), pattern = ".png", full.names = TRUE)
+time_POS <- as.POSIXct(time[1], origin = '1970-01-01')
+gifski(png_files, gif_file = paste0("/Volumes/Elements/gifs/",'OLR_',year(time_POS),'_',month(time_POS),'_',day(time_POS),'.gif'), width = 1800, height = 2400, delay = 0.5)
 
