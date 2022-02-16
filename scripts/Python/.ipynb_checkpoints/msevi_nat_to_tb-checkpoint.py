@@ -61,7 +61,7 @@ for dd in np.arange(0,len(sed),1):
         scn.load([3.9,8.7,9.7,12.0,13.4,7.3,10.8,6.2], calibration='brightness_temperature')
 
         # resample
-        scn = scn.resample("my_germ2")
+        scn = scn.resample("my_germ")
 
         # netCDF file
         scn.save_datasets(filename = ftext+'.nc', 

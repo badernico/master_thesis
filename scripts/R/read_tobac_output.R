@@ -1,7 +1,13 @@
 library(ncdf4)
+library(rasterVis)
+library(raster)
+library(sp)
+library(maps)
+library(maptools)
 
 ## FEATURES
 ncfname <- '~/Documents/Uni_Leipzig/tobac/tobac-tutorials/themes/tobac_v1/OLR_tracking_satellite_NB/Save/2021/07/Features_OLR_20210728.nc'
+ncfname <- '~/Documents/Uni_Leipzig/tobac/tobac-tutorials/themes/tobac_v1/tobac_auto_tracking/Save/Features_TB_20210622.nc'
 nc_open(ncfname)
 
 frame <- ncvar_get(nc_open(ncfname), 'frame')
@@ -19,16 +25,47 @@ ncells <- ncvar_get(nc_open(ncfname), 'ncells')
 
 data <- cbind.data.frame(frame,idx,hdim_1,hdim_2,num,threshold_value,feature,time,timestr,latitude,longitude,ncells)
 
-data_short <- data[data$timestr == '2021-07-28 09:04:00',]
+timestep = '2021-06-22 13:13:36'
+
+data_short <- data[data$timestr == timestep,]
 
 points <- data_short[,c(10:11)]
 colnames(points) <- c('y','x')
 coordinates(points) <- ~x+y
 
+####
+fname <- '/Volumes/Elements/data/msevi_rss/tobac_tb/2021/06/OLR_20210622.nc'
+nc_open(fname)
 
+Sys.setenv(TZ='UTC')
+
+OLR <- ncvar_get(nc_open(fname), 'olr')
+lat <- ncvar_get(nc_open(fname), 'lat')
+lon <- ncvar_get(nc_open(fname), 'lon')
+time <- ncvar_get(nc_open(fname), 'time')
+
+xx = which(as.POSIXct(time,origin = '1970-01-01') == timestep)
+
+OLR_ts <- OLR[,,xx]
+OLR_ts <- OLR_ts[,c(ncol(OLR_ts):1)]
+OLR_ts <- t(OLR_ts)
+
+r_OLR <- raster(OLR_ts)
+projection(r_OLR) = CRS("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
+extent(r_OLR) = c(min(lon), max(lon),min(lat),max(lat))
+
+countries <- map("world", plot=FALSE) 
+countries <- map2SpatialLines(countries, proj4string = CRS("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"))
+
+mycol2 <- colorRampPalette(c('white','black'))(101)
+
+time_POS <- as.POSIXct(time[26],origin = '1970-01-01')
+
+print(levelplot(r_OLR, margin = FALSE, at = seq(210,310,1), main = list(paste0(time_POS, ' UTC'), hjust = +0.35), col.regions = mycol2, colorkey = list(title = 'K', space = 'bottom', width = 0.95), xlab = list(label = "Longitude", vjust = -.2), ylab = list(label = "Latitude", vjust = +1))
+      +layer(sp.lines(countries))+layer(sp.points(points)))
 
 ## SEGMENTATION
-ncfname <- '~/Documents/Uni_Leipzig/tobac/tobac-tutorials/themes/tobac_v1/OLR_tracking_satellite_NB/Save/2021/07/Mask_Segmentation_OLR_20210728.nc'
+ncfname <- '~/Documents/Uni_Leipzig/tobac/tobac-tutorials/themes/tobac_v1/tobac_auto_tracking/Save/Mask_Segmentation_TB_20210622.nc'
 nc_open(ncfname)
 
 seg <- ncvar_get(nc_open(ncfname), 'segmentation_mask')
@@ -36,7 +73,7 @@ lat <- ncvar_get(nc_open(ncfname), 'lat')
 lon <- ncvar_get(nc_open(ncfname), 'lon')
 time <- ncvar_get(nc_open(ncfname), 'time')
 
-seg_short <- seg[,,1]
+seg_short <- seg[,,25]
 seg_short <- seg_short[,c(ncol(seg_short):1)]
 seg_short <- t(seg_short)
 

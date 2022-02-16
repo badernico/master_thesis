@@ -7,8 +7,6 @@ library(maptools)
 library(lubridate)
 library(gifski)
 
-
-
 fname <- '/Volumes/Elements/data/msevi_rss/tobac_tb/2021/06/OLR_20210622.nc'
 nc_open(fname)
 
@@ -18,7 +16,7 @@ OLR <- ncvar_get(nc_open(fname), 'olr')
 lat <- ncvar_get(nc_open(fname), 'lat')
 lon <- ncvar_get(nc_open(fname), 'lon')
 time <- ncvar_get(nc_open(fname), 'time')
-i = 1
+
 for (i in c(1:length(time))) {
   timestep <- time[i]
   time_POS <- as.POSIXct(timestep, origin = '1970-01-01')
@@ -45,6 +43,7 @@ for (i in c(1:length(time))) {
   print(paste0(round((i/length(time))*100,2),' %'))
 }
 
+length(seq(240.1,310,0.1))
 
 png_files <- list.files(paste0("~/Desktop/pics/"), pattern = ".png", full.names = TRUE)
 time_POS <- as.POSIXct(time[1], origin = '1970-01-01')
