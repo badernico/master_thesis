@@ -58,11 +58,11 @@ for dd in np.arange(0,len(sed),1):
 
         # load channels, calibrations and composites
         scn.load(['HRV',0.6,0.8,1.6,3.9,8.7,9.7,12.0,13.4,7.3,10.8,6.2], calibration='counts')
-        scn.load(['convection'])
-        scn.load(['natural_color'])
+        # scn.load(['convection'])
+        # scn.load(['natural_color'])
 
         # resample
-        scn = scn.resample("my_germ2")
+        scn = scn.resample("my_germ")
 
         # netCDF file
         scn.save_datasets(filename = ftext+'.nc', 
