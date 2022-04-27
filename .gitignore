@@ -3,3 +3,5 @@ thesis/
 scripts/Python/.ipynb_checkpoints
 scripts/R/.Rhistory
 env/
+.ipynb_checkpoints
+notebooks/.ipynb_checkpoints/
