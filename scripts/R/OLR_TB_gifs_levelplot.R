@@ -8,7 +8,7 @@ library(lubridate)
 library(gifski)
 
 #### read tobac output
-ncfname <- '/Volumes/Elements/data/tobac/Save/2021/07/04/Track.nc'
+ncfname <- '/Volumes/Elements/data/tobac/Save/2021/06/05/Track.nc'
 #nc_open(ncfname)
 
 frame <- ncvar_get(nc_open(ncfname), 'frame')
@@ -26,9 +26,14 @@ cell <- ncvar_get(nc_open(ncfname), 'cell')
 time_cell <- ncvar_get(nc_open(ncfname), 'time_cell')
 
 data <- cbind.data.frame(frame,idx,hdim_1,hdim_2,num,threshold_value,feature,time,timestr,latitude,longitude,cell,time_cell)
+
+#cells <- read.csv('~/Documents/Uni_Leipzig/master_thesis/analysis/tobac_tracking_statistics/2021/06/05/cells_filtered.csv')
+
+#data = data[data$cell %in% cells$cellID,]
+
 ####
 
-fname <- '/Volumes/Elements/data/msevi_rss/tobac_tb/2021/06/OLR_20210622.nc'
+fname <- '/Volumes/Elements/data/msevi_rss/tobac_tb/2021/06/OLR_20210608.nc'
 nc_open(fname)
 
 Sys.setenv(TZ='UTC')
@@ -38,7 +43,7 @@ lat <- ncvar_get(nc_open(fname), 'lat')
 lon <- ncvar_get(nc_open(fname), 'lon')
 time <- ncvar_get(nc_open(fname), 'time')
 
-i = which(time == as.numeric(as.POSIXct('2021-06-22 15:08:48')))
+i = 36
 
 for (i in c(1:length(time))) {
   timestep <- time[i]
@@ -46,7 +51,15 @@ for (i in c(1:length(time))) {
   
   ####
   data_short <- data[data$timestr == time_POS,]
-  points <- data_short[,c(10:11)]
+  
+  data_short <- data_short[data_short$cell == "1136",]
+  
+  if (nrow(data_short) == 0){
+    points <- data_short[,c(10:11)]
+    points[1,] = rep(0,2)
+  }else{
+    points <- data_short[,c(10:11)]
+  }
   colnames(points) <- c('lat','lon')
   coordinates(points) <- ~ lon + lat
   ####
@@ -68,7 +81,7 @@ for (i in c(1:length(time))) {
   png(paste0('~/Desktop/pics/',time_POS,'.png'), width = 1800, height = 2400, res = 400)
   #print(levelplot(r_OLR, margin = FALSE, at=seq(from=195,to=305,length=60), main = paste0(time_POS, ' UTC'), colorkey = list(title = 'K'))+latticeExtra::layer(sp.lines(countries)))#+layer(sp.points(points)))
   print(levelplot(r_OLR, margin = FALSE, at = c(seq(210,240,0.1),seq(240.1,310,0.1)), main = list(paste0(time_POS, ' UTC'), hjust = +0.35), col.regions = c(rev(mycol),mycol2), colorkey = list(title = 'K', space = 'bottom', width = 0.95), xlab = list(label = "Longitude", vjust = -.2), ylab = list(label = "Latitude", vjust = +1))
-        +latticeExtra::layer(sp.lines(countries))+latticeExtra::layer(sp.points(points)))
+        +latticeExtra::layer(sp.lines(countries))+latticeExtra::layer(sp.points(points, col = 'black',fill= 'violet', pch = 21)))
   dev.off()
   print(paste0(round((i/length(time))*100,2),' %'))
 }
@@ -77,4 +90,9 @@ for (i in c(1:length(time))) {
 png_files <- list.files(paste0("~/Desktop/pics/"), pattern = ".png", full.names = TRUE)
 time_POS <- as.POSIXct(time[1], origin = '1970-01-01')
 gifski(png_files, gif_file = paste0("/Volumes/Elements/gifs/",'OLR_',year(time_POS),'_',month(time_POS),'_',day(time_POS),'.gif'), width = 1800, height = 2400, delay = 0.5)
+
+test = data[data$timestr == "2021-06-05 09:18:56",]
+test = data[data$cell == "1136",]
+
+plot(x = test$longitude, test$latitude)
 
